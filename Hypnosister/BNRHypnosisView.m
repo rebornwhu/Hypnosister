@@ -49,6 +49,15 @@
     [[UIColor lightGrayColor] setStroke];
     
     [path stroke];
+    
+    // iPhone 5 has 1136 * 640 pixels, according to the "point" definition
+    // UIWindow is 568pt * 320pt
+    // In the following code, width = 55 + 200 + 65
+    // height = 120 + 300 + 148
+    UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
+    CGRect logoFrame = CGRectMake(55, 120, 200, 300);
+    
+    [logoImage drawInRect:logoFrame];
 }
 
 @end
