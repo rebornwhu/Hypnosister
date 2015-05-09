@@ -15,12 +15,18 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    CGRect firstFrame = self.window.bounds;
+    CGRect screenRect = self.window.bounds;
+    CGRect bigRect = screenRect;
+    bigRect.size.width *= 2.0;
+    bigRect.size.height *= 2.0;
     
-    BNRHypnosisView *firstView = [[BNRHypnosisView alloc] initWithFrame:firstFrame];
-//    firstView.backgroundColor = [UIColor redColor];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    [self.window addSubview:scrollView];
     
-    [self.window addSubview:firstView];
+    BNRHypnosisView *hyposisView = [[BNRHypnosisView alloc] initWithFrame:bigRect];
+    [scrollView addSubview:hyposisView];
+    
+    scrollView.contentSize = bigRect.size;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

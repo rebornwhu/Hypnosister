@@ -56,7 +56,7 @@
     
     [path stroke];
     
-    [self bronzeChallenge];
+//    [self bronzeChallenge];
 }
 
 - (void)bronzeChallenge
