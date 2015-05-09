@@ -20,7 +20,6 @@
     return self;
 }
 
-
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
@@ -50,6 +49,11 @@
     
     [path stroke];
     
+    [self bronzeChallenge];
+}
+
+- (void)bronzeChallenge
+{
     // iPhone 5 has 1136 * 640 pixels, according to the "point" definition
     // UIWindow is 568pt * 320pt
     // In the following code, width = 55 + 200 + 65
