@@ -63,5 +63,4 @@
     
     [logoImage drawInRect:logoFrame];
 }
-
 @end
